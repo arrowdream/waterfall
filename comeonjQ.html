@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" >
     $(function(){
         waterFall();
@@ -65,7 +65,7 @@
         var scrollTop = $( window ).scrollTop()//注意解决兼容性
         var documentH = $( document ).width();//页面高度
         return (lastPinH < scrollTop + documentH ) ? true : false;//到达指定高度后 返回true，触发waterfall()函数
-       }
+       };
 </script>
 <title></title>
 <style type="text/css">
