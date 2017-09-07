@@ -32,9 +32,9 @@ function waterfall(parent,pin){
     $aPin.each( function( index, value ){
         var pinH = $aPin.eq( index ).height();
         if( index < num ){
-            pinHArr[ index ] = pinH; //第一行中的num个块框pin 先添加进数组pinHArr
+            pinHArr[ index ] = pinH;                                //第一行中的num个块框pin 先添加进数组pinHArr
         }else{
-            var minH = Math.min.apply( null, pinHArr );//数组pinHArr中的最小值minH
+            var minH = Math.min.apply( null, pinHArr );             //数组pinHArr中的最小值minH
             var minHIndex = $.inArray( minH, pinHArr );
             $( value ).css({
                 'position': 'absolute',
@@ -50,7 +50,7 @@ function waterfall(parent,pin){
 function checkscrollside(){
     var $aPin = $( "#main>div" );
     var lastPinH = $aPin.last().get(0).offsetTop + Math.floor($aPin.last().height()/2);//创建【触发添加块框函数waterfall()】的高度：最后一个块框的距离网页顶部+自身高的一半(实现未滚到底就开始加载)
-    var scrollTop = $( window ).scrollTop()//注意解决兼容性
-    var documentH = $( document ).width();//页面高度
-    return (lastPinH < scrollTop + documentH ) ? true : false;//到达指定高度后 返回true，触发waterfall()函数
+    var scrollTop = $( window ).scrollTop()                                           //注意解决兼容性
+    var documentH = $( document ).width();                                           //页面高度
+    return (lastPinH < scrollTop + documentH ) ? true : false;                      //到达指定高度后 返回true，触发waterfall()函数
 }
